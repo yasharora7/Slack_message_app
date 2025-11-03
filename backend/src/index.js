@@ -7,13 +7,13 @@ import apiRouter from './routes/apiRoutes.js';
 
 const app=express();
 
-app.use(express.json);
+app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-apiRouter.use('/api',apiRouter);
+app.use('/api',apiRouter);
 
-app.get("/ping",(req,res)=>{
-    return res.status(StatusCodes.OK).json({message:'ping'});
+app.get('/ping',(req,res)=>{
+    return res.status(StatusCodes.OK).json({message:'pong'});
 });
 
 app.listen(PORT,()=>{

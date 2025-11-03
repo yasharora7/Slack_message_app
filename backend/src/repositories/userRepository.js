@@ -8,9 +8,9 @@ const userRepository={
         const user = await User.findOne({email});
         return user;
     },
-    
+
     getByUsername: async function (username){
-        const user= await User.findone({username});
+        const user= await User.findOne({username}).select('-password'); // exclude password
         return user;
     }
 };

@@ -9,7 +9,7 @@ export default function crudRepository(model){
             return allDocs;
         },
         getById: async function () {
-            const doc = await model.findbyId(id);
+            const doc = await model.findById(id);
             return doc;
         },
         delete: async function (id){
